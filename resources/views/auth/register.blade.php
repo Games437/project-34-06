@@ -5,7 +5,7 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            <div class="login100-pic js-tilt" data-tilt>
+            <div class="login100-pic2 js-tilt" data-tilt>
                 <img src="authen/images/img-04.png" alt="IMG">
             </div>
 
@@ -56,9 +56,8 @@
                 </div>
                 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Register
-                    </button>
+                    <input type="submit" class="login100-form-btn" value="Register">
+                    </input>
                 </div>
 
                 <div class="text-center p-t-136">
