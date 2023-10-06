@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -96,10 +97,6 @@
                         <!-- ============================================================== -->
                         <li class="nav-item search-box">
                             <a href="javascript:void(0)">
-                                <div class="d-flex align-items-center">
-                                    <div class="ms-1 d-none d-sm-block">
-                                    </div>
-                                </div>
                             </a>
                             <form class="app-search position-absolute">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter">
@@ -121,7 +118,7 @@
                                 <img src="{{ asset('back-end/assets/images/users/1.jpg') }}" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('user.profile') }}"><i class="ti-user me-1 ms-1"></i>
+                                <a class="dropdown-item" href="/user/profile"><i class="ti-user me-1 ms-1"></i>
                                     My Profile</a>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-power-off me-1 ms-1"></i>
                                     Log out</a>
@@ -145,6 +142,36 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/dashboard"
+                                aria-expanded="false">
+                                <i class="mdi mdi-av-timer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/user"
+                                aria-expanded="false">
+                                <i class="mdi mdi-border-none"></i>
+                                <span class="hide-menu">User</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/product_type"
+                                aria-expanded="false">
+                                <i class="mdi mdi-border-none"></i>
+                                <span class="hide-menu">Product Type</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/product"
+                                aria-expanded="false">
+                                <i class="mdi mdi-border-none"></i>
+                                <span class="hide-menu">Product</span>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -160,62 +187,44 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <br>
-                    <center>
-                    <div class="col-5 align-self-center">
-                        <h1 class="page-title">My Profile</h1>
-                    </div>
-                </div>
-            </div>
+            @yield('sup_title')
+            
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="row">
-                <center class="mt-4">
-                <!-- Column -->
-                <div class="col-lg-4 col-xlg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <class="mt-4"><img src="{{ asset('back-end/assets/images/users/5.jpg') }}"
-                                    class="rounded-circle" width="150" />
-                                <h3 class="card-title mt-2">Hanna Gover</h3>
-                                <h5 class="card-subtitle">Account</h5>
-                                <div class="row text-center justify-content-md-center">
-                        </div>
-                        <hr>
-                        <div class="card-body"> 
-                            <h4 class="card-title mt-2">Username</h4>
-                            <big class="text-muted pt-4 db">Hanna</big>
-                            <br>
-                            <h4 class="card-title mt-2">Email</h4>
-                            <big class="text-muted pt-4 db">hannagover@gmail.com</big>
-                    </div>
-                    
-                    <div class="col-sm-12">
-                        <a href="/" class="btn btn-success text-white">Home</a>
-
-                        <a href="{{ route ('admin.dashboard')}}" class="btn btn-primary text-white">Product Managment</a>
-                    </div>
-                </div>
-                <br>
-                <!-- Column -->
-                <!-- Column -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Email campaign chart -->
+                <!-- ============================================================== -->
+                @yield('admin')
+                <!-- ============================================================== -->
+                <!-- Email campaign chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Ravenue - page-view-bounce rate -->
+                <!-- ============================================================== -->
                 
-                <!-- Column -->
-            </center>
+                <!-- ============================================================== -->
+                <!-- Ravenue - page-view-bounce rate -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Recent comment and chats -->
+                <!-- ============================================================== -->
+                
+                <!-- ============================================================== -->
+                <!-- Recent comment and chats -->
+                <!-- ============================================================== -->
             </div>
-            <br>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
+            <br>
             <footer class="footer text-center">
                 All Rights Reserved by Nice admin. Designed and Developed by
                 <a href="https://www.wrappixel.com">WrapPixel</a>.

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Corndog Koji And Pizza Aloha shop</title>
     <!-- custom css-->
-    <link rel="stylesheet" href="{{ asset('front-end/main.css') }}">
+    @yield('css')
+    
 
     <!--google font-->
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@700&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@
             <img src="{{ asset('front-end/Image/logo-koji3.png') }}" class="logo">
             <div class="bx bx-menu" id="menu-icon"></div>
             <ul class="link">
-                <li><a href="#home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#product-type">Menu</a></li>
                 <li><a href="{{ route('about.shop') }}#about">About</a></li>
                 <li><a href="/login">Login</a></li>
@@ -49,6 +50,8 @@
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
+    @yield('Currently improving')
+    <!--
     <script>
     var typed = new Typed('.auto-type', {
       strings: ['Korean Corndog Koji <br> And <br> Pizza Aloha Shop'],
@@ -56,7 +59,7 @@
       loop: true
     });
     </script>  
-
+    !-->
     <!-- Product -->
     <section class="product type" id="product-type" >
         <div class="title-text">
@@ -72,7 +75,7 @@
                 </div>
                 <!-- Box 2 -->
                 <div class="box">
-                    <a href="/{{ route('menu.pizza') }}#Pizza">
+                    <a href="{{ route('menu.pizza') }}#Pizza">
                     <img src="{{ asset('front-end/Image/pizza.png') }}" alt=""></a>
                     <h2><a href="/menu-page/menu2.html#Pizza">พิซซ่า</a></h2>
                 </div>
@@ -92,6 +95,9 @@
         <br>
         <br>
     </section>
+
+        <!-- menu -->
+        @yield('menu')
 </body>
 <footer>
         <!-- Footer-->
